@@ -1,5 +1,5 @@
 # Smack
 Chat App
 
-- cocoapods - Alamofire, SwiftyJSON, Socket.IO-Client-Swift ("pod init" on terminal > open Pod file in cocoapods app > edit)
-- SWRevealViewController ("#import "SWRevealViewController.h"" on Bridging-Header)
+- cocoapods - Alamofire, SwiftyJSON, Socket.IO-Client-Swift ("pod init" on terminal > open Pod file in cocoapods app > edit > install > close xcodeproj > open workspace)
+- SWRevealViewController (Supporting Files Folder [SWRevealViewController.h, SWRevealViewController.m, Smack-Bridging-Header.h], ChatVC.swift, ChannelVC.swift)
