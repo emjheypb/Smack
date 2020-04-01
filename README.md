@@ -5,3 +5,4 @@ Chat App
 - SWRevealViewController (Supporting Files Folder [SWRevealViewController.h, SWRevealViewController.m, Smack-Bridging-Header.h], ChatVC.swift, ChannelVC.swift)
 - custom gradient view (GradientView.swift)
 - unwind segue (CreateAccount.swift)
+- userdefaults (AuthService.swift)
