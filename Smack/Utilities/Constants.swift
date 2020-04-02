@@ -24,6 +24,7 @@ let USER_EMAIL = "userEmail"
 let BASE_URL = "https://spacedout-smack.herokuapp.com/v1/"
 let URL_REGISTER = "\(BASE_URL)account/register"
 let URL_LOGIN = "\(BASE_URL)account/login"
+let URL_ADD_USER = "\(BASE_URL)user/add"
 
 // Headers
 let HEADER = [

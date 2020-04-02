@@ -14,6 +14,7 @@
 		5F0AAB862433387B003E08C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F0AAB852433387B003E08C0 /* Assets.xcassets */; };
 		5F0AAB892433387B003E08C0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F0AAB872433387B003E08C0 /* LaunchScreen.storyboard */; };
 		5F0AAB9424334D7B003E08C0 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F0AAB9224334D7A003E08C0 /* SWRevealViewController.m */; };
+		5F483EF32435CF330049A282 /* UserDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F483EF22435CF330049A282 /* UserDataService.swift */; };
 		5FD84A3E243456B00094142F /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FD84A3D243456B00094142F /* ChatVC.swift */; };
 		5FD84A40243456C00094142F /* ChannelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FD84A3F243456C00094142F /* ChannelVC.swift */; };
 		5FD84A4324345EC20094142F /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FD84A4224345EC20094142F /* GradientView.swift */; };
@@ -35,6 +36,7 @@
 		5F0AAB9124334D7A003E08C0 /* Smack-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Smack-Bridging-Header.h"; sourceTree = "<group>"; };
 		5F0AAB9224334D7A003E08C0 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		5F0AAB9324334D7B003E08C0 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		5F483EF22435CF330049A282 /* UserDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataService.swift; sourceTree = "<group>"; };
 		5FD84A3D243456B00094142F /* ChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatVC.swift; sourceTree = "<group>"; };
 		5FD84A3F243456C00094142F /* ChannelVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelVC.swift; sourceTree = "<group>"; };
 		5FD84A4224345EC20094142F /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				5FE1D72F24348ED50041E839 /* AuthService.swift */,
+				5F483EF22435CF330049A282 /* UserDataService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -293,6 +296,7 @@
 				5FD84A4324345EC20094142F /* GradientView.swift in Sources */,
 				5F0AAB9424334D7B003E08C0 /* SWRevealViewController.m in Sources */,
 				5FE1D72924346A490041E839 /* Constants.swift in Sources */,
+				5F483EF32435CF330049A282 /* UserDataService.swift in Sources */,
 				5FE1D73224349D6E0041E839 /* RoundedButton.swift in Sources */,
 				5FD84A40243456C00094142F /* ChannelVC.swift in Sources */,
 				5FE1D73024348ED50041E839 /* AuthService.swift in Sources */,

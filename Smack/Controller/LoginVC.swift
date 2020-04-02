@@ -33,7 +33,8 @@ class LoginVC: UIViewController {
         
         AuthService.instance.loginUser(email: email, password: pass) { (success) in
             if success {
-                print("Login Successful ", AuthService.instance.authToken)
+                print("Login Successful", AuthService.instance.authToken, UserDataService.instance.name)
+                self.dismiss(animated: true, completion: nil)
             }
         }
     }
