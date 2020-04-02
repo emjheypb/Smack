@@ -15,8 +15,6 @@ class LoginVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
     @IBAction func closeBtnPressed(_ sender: Any) {
@@ -24,6 +22,7 @@ class LoginVC: UIViewController {
     }
 
     @IBAction func createAccountBtnPressed(_ sender: Any) {
+        UserDataService.instance.setAvatarName(name: "profileDefault")
         performSegue(withIdentifier: TO_CREATE_ACCOUNT, sender: nil)
     }
     
