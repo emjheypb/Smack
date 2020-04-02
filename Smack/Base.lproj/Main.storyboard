@@ -223,6 +223,9 @@
                                 <state key="normal" title="Login">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="loginBtnPressed:" destination="SxV-Dd-1pQ" eventType="touchUpInside" id="gz0-6o-4ds"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Sxb-nt-SNN">
                                 <rect key="frame" x="82" y="185" width="250" height="91"/>
@@ -295,6 +298,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="3hr-VE-M83"/>
                     <connections>
+                        <outlet property="emailTxt" destination="5rW-cJ-gLd" id="NdK-hd-eDa"/>
+                        <outlet property="passwordTxt" destination="PVJ-xQ-uhQ" id="bk9-Xs-03b"/>
                         <segue destination="tIW-6K-Cug" kind="show" identifier="toCreateAccount" id="Zz2-9r-1yM"/>
                     </connections>
                 </viewController>

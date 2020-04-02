@@ -8,3 +8,5 @@ Chat App
 - userdefaults (AuthService.swift)
 - set-up local API (brew services start mongodb-community; npm install > npm run dev)
 - button rounded corners (RoundedButton.swift)
+- Alamofire (AuthService.swift)
+- SwiftyJSON (AuthService.swift)
