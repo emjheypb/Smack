@@ -31,3 +31,9 @@ let URL_ADD_USER = "\(BASE_URL)user/add"
 let HEADER = [
     "Content-Type" : "application/json; charset=utf-8"
 ]
+
+// Colors
+let smackPurplePlaceholder = #colorLiteral(red: 0.3647058824, green: 0.4045833051, blue: 0.8775706887, alpha: 0.5)
+
+// Notification
+let NOTIF_USER_DATA_DID_CHANGE = Notification.Name("notifUserDataChanged")

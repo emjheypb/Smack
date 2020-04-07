@@ -389,7 +389,7 @@
                                     </view>
                                 </subviews>
                             </stackView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileDefault" translatesAutoresizingMaskIntoConstraints="NO" id="6Dj-fx-slH">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileDefault" translatesAutoresizingMaskIntoConstraints="NO" id="6Dj-fx-slH" customClass="CircleImage" customModule="Smack" customModuleProvider="target">
                                 <rect key="frame" x="157" y="375.5" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="EtA-5v-1lX"/>
@@ -434,11 +434,16 @@
                                     <action selector="generaetBGCBtnPressed:" destination="tIW-6K-Cug" eventType="touchUpInside" id="JFa-QA-0bN"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="mEH-Ic-9lg">
+                                <rect key="frame" x="188.5" y="579.5" width="37" height="37"/>
+                                <color key="color" red="0.2901960784" green="0.30196078430000001" blue="0.84705882349999995" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="nZR-JW-AdC" firstAttribute="centerX" secondItem="LRV-D5-hr8" secondAttribute="centerX" id="8x6-Oz-sTi"/>
                             <constraint firstItem="tWN-F1-25T" firstAttribute="centerX" secondItem="LRV-D5-hr8" secondAttribute="centerX" id="Cu1-Tg-Ba1"/>
+                            <constraint firstItem="mEH-Ic-9lg" firstAttribute="centerY" secondItem="LRV-D5-hr8" secondAttribute="centerY" constant="150" id="FGA-A4-hsQ"/>
                             <constraint firstItem="nZR-JW-AdC" firstAttribute="bottom" secondItem="wU5-VN-Nti" secondAttribute="bottom" id="Iqx-M9-sA8"/>
                             <constraint firstItem="tWN-F1-25T" firstAttribute="top" secondItem="wU5-VN-Nti" secondAttribute="top" constant="100" id="KTV-oZ-Srv"/>
                             <constraint firstItem="gqW-mw-CFX" firstAttribute="centerX" secondItem="LRV-D5-hr8" secondAttribute="centerX" id="L3R-Mx-sKw"/>
@@ -450,6 +455,7 @@
                             <constraint firstItem="MLt-Cf-nal" firstAttribute="top" secondItem="6Dj-fx-slH" secondAttribute="top" id="grT-ud-gOO"/>
                             <constraint firstItem="6Dj-fx-slH" firstAttribute="centerX" secondItem="LRV-D5-hr8" secondAttribute="centerX" id="naq-uW-1IG"/>
                             <constraint firstItem="MLt-Cf-nal" firstAttribute="width" secondItem="6Dj-fx-slH" secondAttribute="width" id="oJR-Os-59X"/>
+                            <constraint firstItem="mEH-Ic-9lg" firstAttribute="centerX" secondItem="LRV-D5-hr8" secondAttribute="centerX" id="v3T-Am-baS"/>
                             <constraint firstItem="kIJ-O0-aVi" firstAttribute="top" secondItem="MLt-Cf-nal" secondAttribute="bottom" id="wag-dT-Mvn"/>
                             <constraint firstItem="jWX-Jq-cCd" firstAttribute="top" secondItem="wU5-VN-Nti" secondAttribute="top" constant="20" id="x6d-aX-vu7"/>
                         </constraints>
@@ -459,6 +465,7 @@
                     <connections>
                         <outlet property="emailTxt" destination="Wb8-wd-Zq2" id="Oub-Fn-Rqq"/>
                         <outlet property="passwordTxt" destination="Nqb-Wd-141" id="npf-ic-TJI"/>
+                        <outlet property="spinner" destination="mEH-Ic-9lg" id="H3t-4G-5GI"/>
                         <outlet property="userImg" destination="6Dj-fx-slH" id="Z7L-Gu-jE8"/>
                         <outlet property="usernameTxt" destination="9IB-Ha-mtl" id="LLd-wg-NcN"/>
                         <segue destination="J5e-Ro-eKG" kind="unwind" identifier="unwindToChannel" unwindAction="prepareForUnwindWithSegue:" id="5Ae-FG-R6b"/>

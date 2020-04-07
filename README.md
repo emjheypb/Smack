@@ -10,3 +10,8 @@ Chat App
 - button rounded corners (RoundedButton.swift)
 - Alamofire (AuthService.swift)
 - SwiftyJSON (AuthService.swift)
+- random number generator - arc4random_uniform (CreateAccountVC.swift)
+- custom attribute field - @IBInspectable (GradientView.swift, RoundedButton.swift)
+- loading spinner (CreateAccountVC.swift)
+- hide keyboard on tap outside - handleTap (CreateAccountVC.swift)
+- notification (CreateAccountVC.swift)
