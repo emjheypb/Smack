@@ -18,6 +18,8 @@
 		5FAF28C52435E25800F08373 /* AvatarPickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FAF28C42435E25800F08373 /* AvatarPickerVC.swift */; };
 		5FAF28C72435E43E00F08373 /* AvatarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FAF28C62435E43E00F08373 /* AvatarCell.swift */; };
 		5FD1BCA8243C5F1900DA3251 /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FD1BCA7243C5F1900DA3251 /* CircleImage.swift */; };
+		5FD1BCAF243C669500DA3251 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FD1BCAD243C669500DA3251 /* ProfileVC.swift */; };
+		5FD1BCB0243C669500DA3251 /* ProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FD1BCAE243C669500DA3251 /* ProfileVC.xib */; };
 		5FD84A3E243456B00094142F /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FD84A3D243456B00094142F /* ChatVC.swift */; };
 		5FD84A40243456C00094142F /* ChannelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FD84A3F243456C00094142F /* ChannelVC.swift */; };
 		5FD84A4324345EC20094142F /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FD84A4224345EC20094142F /* GradientView.swift */; };
@@ -43,6 +45,8 @@
 		5FAF28C42435E25800F08373 /* AvatarPickerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarPickerVC.swift; sourceTree = "<group>"; };
 		5FAF28C62435E43E00F08373 /* AvatarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarCell.swift; sourceTree = "<group>"; };
 		5FD1BCA7243C5F1900DA3251 /* CircleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CircleImage.swift; path = "/Users/mjpb123/Documents/Programming/iOS/Devslopes/iOS 12 - 2/Smack/Smack/View/CircleImage.swift"; sourceTree = "<absolute>"; };
+		5FD1BCAD243C669500DA3251 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
+		5FD1BCAE243C669500DA3251 /* ProfileVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileVC.xib; sourceTree = "<group>"; };
 		5FD84A3D243456B00094142F /* ChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatVC.swift; sourceTree = "<group>"; };
 		5FD84A3F243456C00094142F /* ChannelVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelVC.swift; sourceTree = "<group>"; };
 		5FD84A4224345EC20094142F /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
@@ -97,6 +101,7 @@
 		5F0AAB7B24333879003E08C0 /* Smack */ = {
 			isa = PBXGroup;
 			children = (
+				5FD1BCB1243C669E00DA3251 /* XIB */,
 				5FE1D72E24348EBF0041E839 /* Services */,
 				5FE1D72724346A3A0041E839 /* Utilities */,
 				5FD84A3C243456810094142F /* Model */,
@@ -124,6 +129,14 @@
 			path = "../Supporting Files";
 			sourceTree = "<group>";
 		};
+		5FD1BCB1243C669E00DA3251 /* XIB */ = {
+			isa = PBXGroup;
+			children = (
+				5FD1BCAE243C669500DA3251 /* ProfileVC.xib */,
+			);
+			path = XIB;
+			sourceTree = "<group>";
+		};
 		5FD84A3A243456770094142F /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -132,6 +145,7 @@
 				5FE1D72A24346ECC0041E839 /* LoginVC.swift */,
 				5FE1D72C243473430041E839 /* CreateAccountVC.swift */,
 				5FAF28C42435E25800F08373 /* AvatarPickerVC.swift */,
+				5FD1BCAD243C669500DA3251 /* ProfileVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -241,6 +255,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5FD1BCB0243C669500DA3251 /* ProfileVC.xib in Resources */,
 				5F0AAB892433387B003E08C0 /* LaunchScreen.storyboard in Resources */,
 				5F0AAB862433387B003E08C0 /* Assets.xcassets in Resources */,
 				5F0AAB8424333879003E08C0 /* Main.storyboard in Resources */,
@@ -303,6 +318,7 @@
 				5F0AAB7F24333879003E08C0 /* SceneDelegate.swift in Sources */,
 				5FAF28C72435E43E00F08373 /* AvatarCell.swift in Sources */,
 				5FE1D72B24346ECC0041E839 /* LoginVC.swift in Sources */,
+				5FD1BCAF243C669500DA3251 /* ProfileVC.swift in Sources */,
 				5FD84A4324345EC20094142F /* GradientView.swift in Sources */,
 				5F0AAB9424334D7B003E08C0 /* SWRevealViewController.m in Sources */,
 				5FE1D72924346A490041E839 /* Constants.swift in Sources */,

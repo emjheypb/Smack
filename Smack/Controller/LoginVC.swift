@@ -12,9 +12,18 @@ class LoginVC: UIViewController {
 
     @IBOutlet weak var emailTxt: UITextField!
     @IBOutlet weak var passwordTxt: UITextField!
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setupView()
+    }
+    
+    func setupView() {
+        spinner.isHidden = true
+        emailTxt.attributedPlaceholder = NSAttributedString(string: "email", attributes: [NSAttributedString.Key.foregroundColor : smackPurplePlaceholder])
+        passwordTxt.attributedPlaceholder = NSAttributedString(string: "password", attributes: [NSAttributedString.Key.foregroundColor : smackPurplePlaceholder])
     }
     
     @IBAction func closeBtnPressed(_ sender: Any) {
@@ -30,10 +39,26 @@ class LoginVC: UIViewController {
         guard let email = emailTxt.text, emailTxt.text != "" else { return }
         guard let pass = passwordTxt.text, passwordTxt.text != "" else { return }
         
+        spinner.isHidden = false
+        spinner.startAnimating()
+        
         AuthService.instance.loginUser(email: email, password: pass) { (success) in
             if success {
-                print("Login Successful", AuthService.instance.authToken, UserDataService.instance.name)
-                self.dismiss(animated: true, completion: nil)
+                AuthService.instance.findUserByEmail() { (success) in
+                    if success {
+                        self.dismiss(animated: true, completion: nil)
+                        
+                        self.spinner.isHidden = true
+                        self.spinner.stopAnimating()
+                        
+                        NotificationCenter.default.post(name: NOTIF_USER_DATA_DID_CHANGE, object: nil)
+                    } else {
+                        UserDataService.instance.logoutUser()
+                        
+                        self.spinner.isHidden = true
+                        self.spinner.stopAnimating()
+                    }
+                }
             }
         }
     }

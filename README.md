@@ -13,5 +13,7 @@ Chat App
 - random number generator - arc4random_uniform (CreateAccountVC.swift)
 - custom attribute field - @IBInspectable (GradientView.swift, RoundedButton.swift)
 - loading spinner (CreateAccountVC.swift)
-- hide keyboard on tap outside - handleTap (CreateAccountVC.swift)
+- hide keyboard on tap outside (CreateAccountVC.swift)
 - notification (CreateAccountVC.swift)
+- XIB (ProfileVC.*)
+- close popup on tap outside (ProfileVC.swift)

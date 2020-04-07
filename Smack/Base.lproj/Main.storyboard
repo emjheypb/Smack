@@ -62,17 +62,24 @@
                                     <constraint firstItem="hBz-gF-73f" firstAttribute="centerY" secondItem="aPz-ZM-icO" secondAttribute="centerY" id="b43-8A-AAN"/>
                                 </constraints>
                             </view>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="9Ov-HZ-7Ca">
+                                <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
+                                <color key="color" red="0.25882352939999997" green="0.3294117647" blue="0.72549019609999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="9Ov-HZ-7Ca" firstAttribute="centerX" secondItem="8HL-ym-Xbl" secondAttribute="centerX" id="28O-Xd-6jj"/>
                             <constraint firstItem="pQM-EB-9NJ" firstAttribute="top" secondItem="8HL-ym-Xbl" secondAttribute="top" id="9WX-N5-M3r"/>
                             <constraint firstItem="pQM-EB-9NJ" firstAttribute="leading" secondItem="KhT-af-mPq" secondAttribute="leading" id="TIx-xv-6sd"/>
+                            <constraint firstItem="9Ov-HZ-7Ca" firstAttribute="centerY" secondItem="8HL-ym-Xbl" secondAttribute="centerY" id="UHN-0z-kAT"/>
                             <constraint firstItem="pQM-EB-9NJ" firstAttribute="trailing" secondItem="KhT-af-mPq" secondAttribute="trailing" id="y30-sy-qbS"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="KhT-af-mPq"/>
                     </view>
                     <connections>
                         <outlet property="menuBtn" destination="aPz-ZM-icO" id="TKm-tf-eWA"/>
+                        <outlet property="spinner" destination="9Ov-HZ-7Ca" id="87X-G6-Q1l"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lXX-Bm-bBb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -113,7 +120,7 @@
                                     <action selector="loginBtnPressed:" destination="72A-TS-G9e" eventType="touchUpInside" id="dED-B1-oWb"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menuProfileIcon" translatesAutoresizingMaskIntoConstraints="NO" id="Jv6-NE-4qr">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileDefault" translatesAutoresizingMaskIntoConstraints="NO" id="Jv6-NE-4qr" customClass="CircleImage" customModule="Smack" customModuleProvider="target">
                                 <rect key="frame" x="20" y="787" width="75" height="75"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="75" id="nc0-5r-iho"/>
@@ -169,6 +176,7 @@
                     </view>
                     <connections>
                         <outlet property="loginBtn" destination="vZk-TB-PMH" id="Lml-WY-9Hm"/>
+                        <outlet property="userImg" destination="Jv6-NE-4qr" id="wCK-iL-Usl"/>
                         <segue destination="SxV-Dd-1pQ" kind="presentation" identifier="toLogin" modalPresentationStyle="fullScreen" id="vvU-Wv-Wso"/>
                     </connections>
                 </viewController>
@@ -231,7 +239,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Sxb-nt-SNN">
                                 <rect key="frame" x="82" y="229" width="250" height="91"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5rW-cJ-gLd">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5rW-cJ-gLd">
                                         <rect key="frame" x="0.0" y="0.0" width="250" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="250" id="2PB-kY-FB8"/>
@@ -281,6 +289,10 @@
                                     <action selector="createAccountBtnPressed:" destination="SxV-Dd-1pQ" eventType="touchUpInside" id="abc-nM-Eyj"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="BwL-Dp-9kG">
+                                <rect key="frame" x="188.5" y="449.5" width="37" height="37"/>
+                                <color key="color" red="0.25882352939999997" green="0.3294117647" blue="0.72549019609999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -288,10 +300,12 @@
                             <constraint firstItem="Sxb-nt-SNN" firstAttribute="centerX" secondItem="860-Cv-5mF" secondAttribute="centerX" id="9ZL-dr-Dej"/>
                             <constraint firstItem="Dfj-QR-EQb" firstAttribute="top" secondItem="9sQ-cC-4yF" secondAttribute="bottom" id="So4-oS-hhV"/>
                             <constraint firstItem="Sxb-nt-SNN" firstAttribute="top" secondItem="IaA-Qi-3a5" secondAttribute="bottom" constant="40" id="VQq-gW-LEd"/>
+                            <constraint firstItem="BwL-Dp-9kG" firstAttribute="centerY" secondItem="860-Cv-5mF" secondAttribute="centerY" constant="20" id="XhW-e9-Uyt"/>
                             <constraint firstItem="Dfj-QR-EQb" firstAttribute="centerX" secondItem="860-Cv-5mF" secondAttribute="centerX" id="YXW-Hz-ljl"/>
                             <constraint firstItem="9sQ-cC-4yF" firstAttribute="centerX" secondItem="860-Cv-5mF" secondAttribute="centerX" id="YsI-Gc-Btz"/>
                             <constraint firstItem="IaA-Qi-3a5" firstAttribute="top" secondItem="Hix-7r-5R8" secondAttribute="top" constant="100" id="bls-wN-esE"/>
                             <constraint firstItem="9sQ-cC-4yF" firstAttribute="top" secondItem="Sxb-nt-SNN" secondAttribute="bottom" constant="40" id="irz-yk-bhZ"/>
+                            <constraint firstItem="BwL-Dp-9kG" firstAttribute="centerX" secondItem="860-Cv-5mF" secondAttribute="centerX" id="lbH-BR-H0Y"/>
                             <constraint firstItem="ApT-2m-kkV" firstAttribute="top" secondItem="Hix-7r-5R8" secondAttribute="top" constant="20" id="xUa-oH-IOX"/>
                             <constraint firstItem="Hix-7r-5R8" firstAttribute="trailing" secondItem="ApT-2m-kkV" secondAttribute="trailing" constant="20" id="xxt-JM-v6V"/>
                         </constraints>
@@ -301,6 +315,7 @@
                     <connections>
                         <outlet property="emailTxt" destination="5rW-cJ-gLd" id="NdK-hd-eDa"/>
                         <outlet property="passwordTxt" destination="PVJ-xQ-uhQ" id="bk9-Xs-03b"/>
+                        <outlet property="spinner" destination="BwL-Dp-9kG" id="DWh-Xl-RMk"/>
                         <segue destination="tIW-6K-Cug" kind="presentation" identifier="toCreateAccount" modalPresentationStyle="fullScreen" id="Zz2-9r-1yM"/>
                     </connections>
                 </viewController>
@@ -572,7 +587,6 @@
     <resources>
         <image name="addChannelButton" width="22" height="22"/>
         <image name="closeButton" width="28" height="28"/>
-        <image name="menuProfileIcon" width="99" height="99"/>
         <image name="profileDefault" width="192" height="192"/>
         <image name="smackBack" width="28" height="28"/>
         <image name="smackBurger" width="40" height="40"/>
