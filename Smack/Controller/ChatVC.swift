@@ -30,9 +30,6 @@ class ChatVC: UIViewController {
                     MessageService.instance.findAllChannels { (success) in
                         if success {
                             self.doneLoading(true)
-                        } else {
-                            UserDataService.instance.logoutUser()
-                            self.doneLoading(true)
                         }
                     }
                 } else {
@@ -45,6 +42,7 @@ class ChatVC: UIViewController {
     
     func doneLoading(_ stat: Bool) {
         spinner.isHidden = stat
+        menuBtn.isEnabled = stat
         
         if stat {
             spinner.stopAnimating()

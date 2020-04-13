@@ -8,15 +8,19 @@
 
 import UIKit
 
-class ChannelVC: UIViewController {
-
+class ChannelVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
     @IBOutlet weak var loginBtn: UIButton!
     @IBOutlet weak var userImg: UIImageView!
+    @IBOutlet weak var channelsTblView: UITableView!
     
     @IBAction func prepareForUnwind(segue: UIStoryboardSegue) {}
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        channelsTblView.dataSource = self
+        channelsTblView.delegate = self
 
         self.revealViewController()?.rearViewRevealWidth = self.view.frame.size.width - 70
         setupView()
@@ -39,6 +43,8 @@ class ChannelVC: UIViewController {
     }
     
     func setupView() {
+        channelsTblView.reloadData()
+        
         if AuthService.instance.isLoggedIn {
             loginBtn.setTitle(UserDataService.instance.name, for: .normal)
             userImg.image = UIImage(named: UserDataService.instance.avatarName)
@@ -49,5 +55,25 @@ class ChannelVC: UIViewController {
             userImg.backgroundColor = UIColor.clear
         }
     }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return MessageService.instance.channels.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "ChannelCell") as? ChannelCell {
+            let channel = MessageService.instance.channels[indexPath.row]
+            cell.configureCell(channel: channel)
+            
+            return cell
+        }
+        
+        return UITableViewCell()
+    }
+    
     
 }
