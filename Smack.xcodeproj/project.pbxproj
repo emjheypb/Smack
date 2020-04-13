@@ -15,6 +15,8 @@
 		5F0AAB892433387B003E08C0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F0AAB872433387B003E08C0 /* LaunchScreen.storyboard */; };
 		5F0AAB9424334D7B003E08C0 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F0AAB9224334D7A003E08C0 /* SWRevealViewController.m */; };
 		5F483EF32435CF330049A282 /* UserDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F483EF22435CF330049A282 /* UserDataService.swift */; };
+		5F492B232444A6CB0041D9EF /* CreateChannelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F492B212444A6CB0041D9EF /* CreateChannelVC.swift */; };
+		5F492B242444A6CB0041D9EF /* CreateChannelVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F492B222444A6CB0041D9EF /* CreateChannelVC.xib */; };
 		5FAF28C52435E25800F08373 /* AvatarPickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FAF28C42435E25800F08373 /* AvatarPickerVC.swift */; };
 		5FAF28C72435E43E00F08373 /* AvatarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FAF28C62435E43E00F08373 /* AvatarCell.swift */; };
 		5FC20A9A2444411E0088E43B /* MessageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC20A992444411E0088E43B /* MessageService.swift */; };
@@ -46,6 +48,8 @@
 		5F0AAB9224334D7A003E08C0 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		5F0AAB9324334D7B003E08C0 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		5F483EF22435CF330049A282 /* UserDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataService.swift; sourceTree = "<group>"; };
+		5F492B212444A6CB0041D9EF /* CreateChannelVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateChannelVC.swift; sourceTree = "<group>"; };
+		5F492B222444A6CB0041D9EF /* CreateChannelVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateChannelVC.xib; sourceTree = "<group>"; };
 		5FAF28C42435E25800F08373 /* AvatarPickerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarPickerVC.swift; sourceTree = "<group>"; };
 		5FAF28C62435E43E00F08373 /* AvatarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarCell.swift; sourceTree = "<group>"; };
 		5FC20A992444411E0088E43B /* MessageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageService.swift; sourceTree = "<group>"; };
@@ -141,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				5FD1BCAE243C669500DA3251 /* ProfileVC.xib */,
+				5F492B222444A6CB0041D9EF /* CreateChannelVC.xib */,
 			);
 			path = XIB;
 			sourceTree = "<group>";
@@ -154,6 +159,7 @@
 				5FE1D72C243473430041E839 /* CreateAccountVC.swift */,
 				5FAF28C42435E25800F08373 /* AvatarPickerVC.swift */,
 				5FD1BCAD243C669500DA3251 /* ProfileVC.swift */,
+				5F492B212444A6CB0041D9EF /* CreateChannelVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -269,6 +275,7 @@
 			files = (
 				5FD1BCB0243C669500DA3251 /* ProfileVC.xib in Resources */,
 				5F0AAB892433387B003E08C0 /* LaunchScreen.storyboard in Resources */,
+				5F492B242444A6CB0041D9EF /* CreateChannelVC.xib in Resources */,
 				5F0AAB862433387B003E08C0 /* Assets.xcassets in Resources */,
 				5F0AAB8424333879003E08C0 /* Main.storyboard in Resources */,
 			);
@@ -327,6 +334,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5F0AAB7D24333879003E08C0 /* AppDelegate.swift in Sources */,
+				5F492B232444A6CB0041D9EF /* CreateChannelVC.swift in Sources */,
 				5F0AAB7F24333879003E08C0 /* SceneDelegate.swift in Sources */,
 				5FAF28C72435E43E00F08373 /* AvatarCell.swift in Sources */,
 				5FE1D72B24346ECC0041E839 /* LoginVC.swift in Sources */,

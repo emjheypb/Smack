@@ -16,6 +16,8 @@ class MessageService {
     var channels = [Channel]()
     
     func findAllChannels(completion: @escaping CompletionHandler) {
+        channels = [Channel]()
+        
         Alamofire.request(URL_GET_CHANNELS, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: BEARER_HEADER).responseJSON { (response) in
             if response.result.error == nil {
                 guard let data = response.data else { return }
@@ -42,6 +44,23 @@ class MessageService {
                completion(false)
                debugPrint(response.result.error as Any)
             }
+        }
+    }
+    
+    func createChannel(name: String, description: String, completion: @escaping CompletionHandler) {
+        
+        let body = [
+            "name" : name,
+            "description" : description
+        ]
+        
+        Alamofire.request(URL_CREATE_CHANNEL, method: .post, parameters: body, encoding: JSONEncoding.default, headers: BEARER_HEADER).responseJSON { (response) in
+            if response.result.error == nil {
+                completion(true)
+            }  else {
+              completion(false)
+              debugPrint(response.result.error as Any)
+           }
         }
     }
 }
