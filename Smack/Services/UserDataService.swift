@@ -10,7 +10,7 @@
 import Foundation
 
 class UserDataService {
-    static let instance = UserDataService()
+    static let instance = UserDataService()  // Singleton
     
     public private(set) var id = ""
     public private(set) var avatarColor = ""

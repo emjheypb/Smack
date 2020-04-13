@@ -2,9 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:/Users/mjpb123/Documents/Programming/iOS/Devslopes/iOS 12 - 2/Smack/Smack/View/CircleImage.swift">
-   </FileRef>
-   <FileRef
       location = "group:Smack.xcodeproj">
    </FileRef>
    <FileRef

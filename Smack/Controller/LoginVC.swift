@@ -13,6 +13,7 @@ class LoginVC: UIViewController {
     @IBOutlet weak var emailTxt: UITextField!
     @IBOutlet weak var passwordTxt: UITextField!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
+    @IBOutlet weak var loginBtn: RoundedButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,8 +40,7 @@ class LoginVC: UIViewController {
         guard let email = emailTxt.text, emailTxt.text != "" else { return }
         guard let pass = passwordTxt.text, passwordTxt.text != "" else { return }
         
-        spinner.isHidden = false
-        spinner.startAnimating()
+        doneLoading(false)
         
         AuthService.instance.loginUser(email: email, password: pass) { (success) in
             if success {
@@ -48,18 +48,27 @@ class LoginVC: UIViewController {
                     if success {
                         self.dismiss(animated: true, completion: nil)
                         
-                        self.spinner.isHidden = true
-                        self.spinner.stopAnimating()
+                        self.doneLoading(true)
                         
                         NotificationCenter.default.post(name: NOTIF_USER_DATA_DID_CHANGE, object: nil)
                     } else {
                         UserDataService.instance.logoutUser()
                         
-                        self.spinner.isHidden = true
-                        self.spinner.stopAnimating()
+                        self.doneLoading(true)
                     }
                 }
             }
+        }
+    }
+    
+    func doneLoading(_ stat: Bool) {
+        spinner.isHidden = stat
+        loginBtn.isEnabled = stat
+        
+        if stat {
+            spinner.stopAnimating()
+        } else {
+            spinner.startAnimating()
         }
     }
     

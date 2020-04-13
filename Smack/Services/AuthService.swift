@@ -13,7 +13,7 @@ import SwiftyJSON
 
 class AuthService {
     
-    static let instance = AuthService()
+    static let instance = AuthService()  // Singleton
     
     let defaults = UserDefaults.standard
     
@@ -128,6 +128,7 @@ class AuthService {
             if response.result.error == nil {
                 guard let data = response.data else { return }
                 self.setUserInfo(data: data)
+                print("TOKEN: \(self.authToken)")
                 
                 completion(true)
             } else {

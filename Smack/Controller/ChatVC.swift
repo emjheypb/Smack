@@ -20,23 +20,36 @@ class ChatVC: UIViewController {
         self.view.addGestureRecognizer((self.revealViewController().panGestureRecognizer())!)
         self.view.addGestureRecognizer((self.revealViewController().tapGestureRecognizer())!)
         
-        spinner.isHidden = true
+        doneLoading(true)
         
         if AuthService.instance.isLoggedIn {
-            spinner.isHidden = false
-            spinner.startAnimating()
+            self.doneLoading(false)
             
             AuthService.instance.findUserByEmail() { (success) in
                 if success {
-                    self.spinner.isHidden = true
-                    self.spinner.stopAnimating()
+                    MessageService.instance.findAllChannels { (success) in
+                        if success {
+                            self.doneLoading(true)
+                        } else {
+                            UserDataService.instance.logoutUser()
+                            self.doneLoading(true)
+                        }
+                    }
                 } else {
                     UserDataService.instance.logoutUser()
-                    
-                    self.spinner.isHidden = true
-                    self.spinner.stopAnimating()
+                    self.doneLoading(true)
                 }
             }
+        }
+    }
+    
+    func doneLoading(_ stat: Bool) {
+        spinner.isHidden = stat
+        
+        if stat {
+            spinner.stopAnimating()
+        } else {
+            spinner.startAnimating()
         }
     }
 

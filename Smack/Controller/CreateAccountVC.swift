@@ -15,6 +15,7 @@ class CreateAccountVC: UIViewController {
     @IBOutlet weak var passwordTxt: UITextField!
     @IBOutlet weak var userImg: UIImageView!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
+    @IBOutlet weak var createAccountBtn: RoundedButton!
     
     var avatarName = "profileDefault"
     var avatarColor = "[0.5, 0.5, 0.5, 1]"
@@ -41,8 +42,7 @@ class CreateAccountVC: UIViewController {
     }
     
     @IBAction func createAccountBtnPressed(_ sender: Any) {
-        spinner.isHidden = false
-        spinner.startAnimating()
+        doneLoading(false)
         
         guard let email = emailTxt.text, emailTxt.text != "" else { return }
         guard let pass = passwordTxt.text, passwordTxt.text != "" else { return }
@@ -54,9 +54,7 @@ class CreateAccountVC: UIViewController {
                     if success {
                         AuthService.instance.createUser(name: name, email: email, avatarName: self.avatarName, avatarColor: self.avatarColor) { (success) in
                             if success {
-                                self.spinner.isHidden = true
-                                self.spinner.stopAnimating()
-//                                print("Login Successful", AuthService.instance.authToken, UserDataService.instance.name)
+                                self.doneLoading(true)
                                 
                                 self.performSegue(withIdentifier: UNWIND, sender: nil)
                                 NotificationCenter.default.post(name: NOTIF_USER_DATA_DID_CHANGE, object: nil)
@@ -99,4 +97,14 @@ class CreateAccountVC: UIViewController {
         view.endEditing(true)
     }
     
+    func doneLoading(_ stat: Bool) {
+        spinner.isHidden = stat
+        createAccountBtn.isEnabled = stat
+        
+        if stat {
+            spinner.stopAnimating()
+        } else {
+            spinner.startAnimating()
+        }
+    }
 }
