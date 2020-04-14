@@ -114,7 +114,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vZk-TB-PMH">
-                                <rect key="frame" x="105" y="804.5" width="55" height="40"/>
+                                <rect key="frame" x="105" y="794.5" width="55" height="40"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="20"/>
                                 <state key="normal" title="Login">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -124,14 +124,14 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileDefault" translatesAutoresizingMaskIntoConstraints="NO" id="Jv6-NE-4qr" customClass="CircleImage" customModule="Smack" customModuleProvider="target">
-                                <rect key="frame" x="20" y="787" width="75" height="75"/>
+                                <rect key="frame" x="20" y="777" width="75" height="75"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="75" id="nc0-5r-iho"/>
                                     <constraint firstAttribute="width" constant="75" id="whR-bR-Dsg"/>
                                 </constraints>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ShT-iC-sT6">
-                                <rect key="frame" x="0.0" y="133.5" width="342" height="633.5"/>
+                                <rect key="frame" x="0.0" y="133.5" width="342" height="623.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ChannelCell" id="zQN-1Y-iAH" customClass="ChannelCell" customModule="Smack" customModuleProvider="target">
@@ -167,7 +167,7 @@
                             <constraint firstItem="3gH-RY-H5b" firstAttribute="trailing" secondItem="K4p-Cc-fgE" secondAttribute="trailing" constant="72" id="7gD-7W-KvI"/>
                             <constraint firstItem="Jv6-NE-4qr" firstAttribute="top" secondItem="ShT-iC-sT6" secondAttribute="bottom" constant="20" id="8iM-Pq-mzN"/>
                             <constraint firstItem="pBi-QP-cfL" firstAttribute="leading" secondItem="3gH-RY-H5b" secondAttribute="leading" constant="20" id="GXT-7u-6cP"/>
-                            <constraint firstItem="Jv6-NE-4qr" firstAttribute="bottom" secondItem="3gH-RY-H5b" secondAttribute="bottom" id="JGo-LE-jEz"/>
+                            <constraint firstItem="Jv6-NE-4qr" firstAttribute="bottom" secondItem="3gH-RY-H5b" secondAttribute="bottom" constant="-10" id="JGo-LE-jEz"/>
                             <constraint firstItem="pBi-QP-cfL" firstAttribute="top" secondItem="6ZN-mH-wTB" secondAttribute="bottom" constant="20" id="LOc-o2-iwh"/>
                             <constraint firstItem="6ZN-mH-wTB" firstAttribute="leading" secondItem="3gH-RY-H5b" secondAttribute="leading" constant="20" id="No6-rI-N0F"/>
                             <constraint firstItem="vZk-TB-PMH" firstAttribute="centerY" secondItem="Jv6-NE-4qr" secondAttribute="centerY" id="XIV-n0-PQM"/>

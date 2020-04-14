@@ -13,6 +13,7 @@ class CreateChannelVC: UIViewController {
     @IBOutlet weak var nameTxt: UITextField!
     @IBOutlet weak var descriptionTxt: UITextField!
     @IBOutlet weak var backgroundView: UIView!
+    @IBOutlet weak var createChannelBtn: RoundedButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,14 +26,22 @@ class CreateChannelVC: UIViewController {
     }
     
     @IBAction func createChannelPressed(_ sender: Any) {
+        createChannelBtn.isEnabled = false
         guard let name = nameTxt.text, nameTxt.text != "" else { return }
         guard let description = descriptionTxt.text, descriptionTxt.text != "" else { return }
         
-        MessageService.instance.createChannel(name: name, description: description) { (success) in
+        SocketService.instance.addChannel(name: name, description: description) { (success) in
             if success {
                 self.dismiss(animated: true, completion: nil)
+                self.createChannelBtn.isEnabled = true
             }
         }
+        
+//        MessageService.instance.createChannel(name: name, description: description) { (success) in
+//            if success {
+//                self.dismiss(animated: true, completion: nil)
+//            }
+//        }
     }
     
     func setupView() {

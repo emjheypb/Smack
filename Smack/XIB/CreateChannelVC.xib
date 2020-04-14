@@ -10,6 +10,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CreateChannelVC" customModule="Smack" customModuleProvider="target">
             <connections>
                 <outlet property="backgroundView" destination="xq9-ks-UFc" id="ZSS-Rz-vm9"/>
+                <outlet property="createChannelBtn" destination="Dp1-gY-rbE" id="m31-2O-HID"/>
                 <outlet property="descriptionTxt" destination="8hk-tL-CFq" id="eyF-B2-zD0"/>
                 <outlet property="nameTxt" destination="5Ez-e0-yGp" id="0aV-Yh-GoJ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>

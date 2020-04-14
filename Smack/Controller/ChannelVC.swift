@@ -26,6 +26,12 @@ class ChannelVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         setupView()
         
         NotificationCenter.default.addObserver(self, selector: #selector(ChannelVC.userDataDidChange(_:)), name: NOTIF_USER_DATA_DID_CHANGE, object: nil)
+        
+        SocketService.instance.getChannel { (success) in
+            if success {
+                self.channelsTblView.reloadData()
+            }
+        }
     }
 
     @IBAction func loginBtnPressed(_ sender: Any) {

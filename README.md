@@ -18,3 +18,4 @@ Chat App
 - XIB (ProfileVC.*)
 - close popup on tap outside (ProfileVC.swift)
 - JSONDecoder - has to have the exact members of the result (Commented Out: MessageService.swift, Channel.swift)
+- Sockets (SocketService.swift, CreateChannelVC.swift, ChannelVC.swift)
