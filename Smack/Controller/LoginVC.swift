@@ -46,13 +46,10 @@ class LoginVC: UIViewController {
             if success {
                 AuthService.instance.findUserByEmail() { (success) in
                     if success {
-                        MessageService.instance.findAllChannels { (success) in
-                            if success {
-                                self.dismiss(animated: true, completion: nil)
-                                self.doneLoading(true)
-                                NotificationCenter.default.post(name: NOTIF_USER_DATA_DID_CHANGE, object: nil)
-                            }
-                        }
+                        NotificationCenter.default.post(name: NOTIF_USER_DATA_DID_CHANGE, object: nil)
+                        
+                        self.dismiss(animated: true, completion: nil)
+                        self.doneLoading(true)
                     } else {
                         UserDataService.instance.logoutUser()
                         

@@ -12,6 +12,7 @@ class ChatVC: UIViewController {
 
     @IBOutlet weak var menuBtn: UIButton!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
+    @IBOutlet weak var channelLbl: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +21,9 @@ class ChatVC: UIViewController {
         self.view.addGestureRecognizer((self.revealViewController().panGestureRecognizer())!)
         self.view.addGestureRecognizer((self.revealViewController().tapGestureRecognizer())!)
         
+        NotificationCenter.default.addObserver(self, selector: #selector(ChatVC.userDataDidChange(_:)), name: NOTIF_USER_DATA_DID_CHANGE, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(ChatVC.channelSelected(_:)), name: NOTIF_CHANNEL_SELECTED, object: nil)
+        
         doneLoading(true)
         
         if AuthService.instance.isLoggedIn {
@@ -27,11 +31,8 @@ class ChatVC: UIViewController {
             
             AuthService.instance.findUserByEmail() { (success) in
                 if success {
-                    MessageService.instance.findAllChannels { (success) in
-                        if success {
-                            self.doneLoading(true)
-                        }
-                    }
+                    self.doneLoading(true)
+                    NotificationCenter.default.post(name: NOTIF_USER_DATA_DID_CHANGE, object: nil)
                 } else {
                     UserDataService.instance.logoutUser()
                     self.doneLoading(true)
@@ -50,5 +51,30 @@ class ChatVC: UIViewController {
             spinner.startAnimating()
         }
     }
+    
+    @objc func userDataDidChange(_ notif: Notification) {
+        if AuthService.instance.isLoggedIn {
+            onLoginGetMessages()
+        } else {
+            channelLbl.text = "SMACK"
+        }
+    }
+    
+    @objc func channelSelected(_ notif: Notification) {
+        updateWithChannel()
+    }
 
+    func onLoginGetMessages() {
+        MessageService.instance.findAllChannels { (success) in
+            if success {
+                
+            }
+        }
+    }
+    
+    func updateWithChannel() {
+        let name = MessageService.instance.selectedChannel?.name ?? ""
+        channelLbl.text = "#\(name)"
+    }
+    
 }

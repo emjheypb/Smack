@@ -46,8 +46,8 @@
                                         </constraints>
                                         <state key="normal" image="smackBurger"/>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Smack" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hBz-gF-73f">
-                                        <rect key="frame" x="177" y="54" width="60" height="27.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SMACK" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hBz-gF-73f">
+                                        <rect key="frame" x="172" y="54" width="70" height="27.5"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -78,6 +78,7 @@
                         <viewLayoutGuide key="safeArea" id="KhT-af-mPq"/>
                     </view>
                     <connections>
+                        <outlet property="channelLbl" destination="hBz-gF-73f" id="veD-SU-itJ"/>
                         <outlet property="menuBtn" destination="aPz-ZM-icO" id="TKm-tf-eWA"/>
                         <outlet property="spinner" destination="9Ov-HZ-7Ca" id="87X-G6-Q1l"/>
                     </connections>
