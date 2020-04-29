@@ -66,6 +66,22 @@
                                 <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
                                 <color key="color" red="0.25882352939999997" green="0.3294117647" blue="0.72549019609999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </activityIndicatorView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Message" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VRG-kk-ekf">
+                                <rect key="frame" x="0.0" y="822" width="414" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="1Kt-IU-xRW"/>
+                                </constraints>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RUz-bD-zb4">
+                                <rect key="frame" x="376" y="827" width="30" height="30"/>
+                                <state key="normal" image="send"/>
+                                <connections>
+                                    <action selector="sendMessagePressed:" destination="vR5-pb-c2i" eventType="touchUpInside" id="tPX-SP-GNj"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -73,6 +89,11 @@
                             <constraint firstItem="pQM-EB-9NJ" firstAttribute="top" secondItem="8HL-ym-Xbl" secondAttribute="top" id="9WX-N5-M3r"/>
                             <constraint firstItem="pQM-EB-9NJ" firstAttribute="leading" secondItem="KhT-af-mPq" secondAttribute="leading" id="TIx-xv-6sd"/>
                             <constraint firstItem="9Ov-HZ-7Ca" firstAttribute="centerY" secondItem="8HL-ym-Xbl" secondAttribute="centerY" id="UHN-0z-kAT"/>
+                            <constraint firstItem="RUz-bD-zb4" firstAttribute="centerY" secondItem="VRG-kk-ekf" secondAttribute="centerY" id="ZNj-Tf-Qxm"/>
+                            <constraint firstItem="KhT-af-mPq" firstAttribute="trailing" secondItem="RUz-bD-zb4" secondAttribute="trailing" constant="8" id="l7V-sp-tvq"/>
+                            <constraint firstItem="VRG-kk-ekf" firstAttribute="bottom" secondItem="KhT-af-mPq" secondAttribute="bottom" id="rBd-uh-oB5"/>
+                            <constraint firstItem="VRG-kk-ekf" firstAttribute="leading" secondItem="KhT-af-mPq" secondAttribute="leading" id="ucq-dN-IW8"/>
+                            <constraint firstItem="VRG-kk-ekf" firstAttribute="trailing" secondItem="KhT-af-mPq" secondAttribute="trailing" id="wdU-tY-82Z"/>
                             <constraint firstItem="pQM-EB-9NJ" firstAttribute="trailing" secondItem="KhT-af-mPq" secondAttribute="trailing" id="y30-sy-qbS"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="KhT-af-mPq"/>
@@ -80,6 +101,7 @@
                     <connections>
                         <outlet property="channelLbl" destination="hBz-gF-73f" id="veD-SU-itJ"/>
                         <outlet property="menuBtn" destination="aPz-ZM-icO" id="TKm-tf-eWA"/>
+                        <outlet property="messageTxtbx" destination="VRG-kk-ekf" id="EPp-JG-7RF"/>
                         <outlet property="spinner" destination="9Ov-HZ-7Ca" id="87X-G6-Q1l"/>
                     </connections>
                 </viewController>
@@ -598,6 +620,7 @@
         <image name="addChannelButton" width="22" height="22"/>
         <image name="closeButton" width="28" height="28"/>
         <image name="profileDefault" width="192" height="192"/>
+        <image name="send" width="30" height="30"/>
         <image name="smackBack" width="28" height="28"/>
         <image name="smackBurger" width="40" height="40"/>
         <image name="smackLogo" width="48" height="40"/>
