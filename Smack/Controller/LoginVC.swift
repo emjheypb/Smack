@@ -44,6 +44,7 @@ class LoginVC: UIViewController {
         
         AuthService.instance.loginUser(email: email, password: pass) { (success) in
             if success {
+                print(AuthService.instance.authToken)
                 AuthService.instance.findUserByEmail() { (success) in
                     if success {
                         NotificationCenter.default.post(name: NOTIF_USER_DATA_DID_CHANGE, object: nil)

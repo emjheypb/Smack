@@ -29,6 +29,7 @@ let URL_ADD_USER = "\(BASE_URL)user/add"
 let URL_GET_USER_BY_EMAIL = "\(BASE_URL)user/byEmail/"
 let URL_GET_CHANNELS = "\(BASE_URL)channel"
 let URL_CREATE_CHANNEL = "\(BASE_URL)channel/add"
+let URL_GET_MESSAGES = "\(BASE_URL)message/byChannel/"
 
 // Headers
 let HEADER = [

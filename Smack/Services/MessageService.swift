@@ -14,6 +14,7 @@ class MessageService {
     static let instance = MessageService() // Singleton
     
     var channels = [Channel]()
+    var messages = [Message]()
     var selectedChannel : Channel?
     
     func findAllChannels(completion: @escaping CompletionHandler) {
@@ -43,10 +44,45 @@ class MessageService {
                 NotificationCenter.default.post(name: NOTIF_CHANNELS_LOADED, object: nil)
                 completion(true)
             } else {
+                debugPrint(response.result.error as Any)
                completion(false)
-               debugPrint(response.result.error as Any)
             }
         }
+    }
+    
+    func getAllChannelMessages(completion: @escaping CompletionHandler) {
+        clearMessages()
+        
+        Alamofire.request(URL_GET_MESSAGES + selectedChannel!.id, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: BEARER_HEADER).responseJSON { (response) in
+            if response.result.error == nil {
+                guard let data = response.data else { return }
+                
+                if let json = JSON(data).array {
+                    for item in json {
+                        let id = item["_id"].stringValue
+                        let messageBody = item["messageBody"].stringValue
+                        let channelID = item["channelId"].stringValue
+                        let userName = item["userName"].stringValue
+                        let userAvatar = item["userAvatar"].stringValue
+                        let userAvatarColor = item["userAvatarColor"].stringValue
+                        let timestamp = item["timeStamp"].stringValue
+                        
+                        let message = Message(id: id, message: messageBody, channelID: channelID, userName: userName, userAvatar: userAvatar, userAvatarColor: userAvatarColor, timeStamp: timestamp)
+                        
+                        self.messages.append(message)
+                    }
+                }
+                
+                completion(true)
+            } else {
+                debugPrint(response.result.error as Any)
+                completion(false)
+            }
+        }
+    }
+    
+    func clearMessages() {
+        messages.removeAll()
     }
     
     func clearChannels() {

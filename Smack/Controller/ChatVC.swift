@@ -28,6 +28,7 @@ class ChatVC: UIViewController {
         
         if AuthService.instance.isLoggedIn {
             self.doneLoading(false)
+            print(AuthService.instance.authToken)
             
             AuthService.instance.findUserByEmail() { (success) in
                 if success {
@@ -67,7 +68,12 @@ class ChatVC: UIViewController {
     func onLoginGetMessages() {
         MessageService.instance.findAllChannels { (success) in
             if success {
-                
+                if MessageService.instance.channels.count > 0 {
+                    MessageService.instance.selectedChannel = MessageService.instance.channels[0]
+                    self.updateWithChannel()
+                } else {
+                    self.channelLbl.text = "No Channels"
+                }
             }
         }
     }
@@ -75,6 +81,13 @@ class ChatVC: UIViewController {
     func updateWithChannel() {
         let name = MessageService.instance.selectedChannel?.name ?? ""
         channelLbl.text = "#\(name)"
+        getMessages()
+    }
+    
+    func getMessages() {
+        MessageService.instance.getAllChannelMessages { (success) in
+            
+        }
     }
     
 }
