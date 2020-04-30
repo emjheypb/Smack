@@ -57,6 +57,8 @@ class LoginVC: UIViewController {
                         self.doneLoading(true)
                     }
                 }
+            } else {
+                self.doneLoading(true)
             }
         }
     }

@@ -91,7 +91,12 @@ class AuthService {
                 self.authToken = json["token"].stringValue
                 self.isLoggedIn = true
                 
-                completion(true)
+                if self.userEmail == "" {
+                    completion(false)
+                } else {
+                    completion(true)
+                }
+                
             } else {
                 completion(false)
                 debugPrint(response.result.error as Any)

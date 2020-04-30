@@ -22,6 +22,7 @@
 		5F6D913C245980A100761703 /* KeyboardBoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6D913B245980A100761703 /* KeyboardBoundView.swift */; };
 		5FAF28C52435E25800F08373 /* AvatarPickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FAF28C42435E25800F08373 /* AvatarPickerVC.swift */; };
 		5FAF28C72435E43E00F08373 /* AvatarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FAF28C62435E43E00F08373 /* AvatarCell.swift */; };
+		5FBB970E245AA0FB00F4265F /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FBB970D245AA0FB00F4265F /* MessageCell.swift */; };
 		5FC20A9A2444411E0088E43B /* MessageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC20A992444411E0088E43B /* MessageService.swift */; };
 		5FC20A9C244441BC0088E43B /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC20A9B244441BC0088E43B /* Channel.swift */; };
 		5FC20A9E244443B30088E43B /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC20A9D244443B30088E43B /* CircleImage.swift */; };
@@ -58,6 +59,7 @@
 		5F6D913B245980A100761703 /* KeyboardBoundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardBoundView.swift; sourceTree = "<group>"; };
 		5FAF28C42435E25800F08373 /* AvatarPickerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarPickerVC.swift; sourceTree = "<group>"; };
 		5FAF28C62435E43E00F08373 /* AvatarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarCell.swift; sourceTree = "<group>"; };
+		5FBB970D245AA0FB00F4265F /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
 		5FC20A992444411E0088E43B /* MessageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageService.swift; sourceTree = "<group>"; };
 		5FC20A9B244441BC0088E43B /* Channel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Channel.swift; sourceTree = "<group>"; };
 		5FC20A9D244443B30088E43B /* CircleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CircleImage.swift; path = /Users/mjpb123/Documents/Programming/iOS/Devslopes/Smack/Smack/View/CircleImage.swift; sourceTree = "<absolute>"; };
@@ -180,6 +182,7 @@
 				5FD1BCA7243C5F1900DA3251 /* CircleImage.swift */,
 				5FC20AA1244452950088E43B /* ChannelCell.swift */,
 				5F6D913B245980A100761703 /* KeyboardBoundView.swift */,
+				5FBB970D245AA0FB00F4265F /* MessageCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -353,6 +356,7 @@
 				5FC20A9C244441BC0088E43B /* Channel.swift in Sources */,
 				5F0AAB9424334D7B003E08C0 /* SWRevealViewController.m in Sources */,
 				5FC20AA2244452950088E43B /* ChannelCell.swift in Sources */,
+				5FBB970E245AA0FB00F4265F /* MessageCell.swift in Sources */,
 				5FE1D72924346A490041E839 /* Constants.swift in Sources */,
 				5F483EF32435CF330049A282 /* UserDataService.swift in Sources */,
 				5FE1D73224349D6E0041E839 /* RoundedButton.swift in Sources */,

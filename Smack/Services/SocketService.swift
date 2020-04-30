@@ -41,8 +41,10 @@ class SocketService: NSObject {
             guard let description = dataArray[1] as? String else { return }
             guard let id = dataArray[2] as? String else { return }
             
-            let newChannel = Channel(id: id, name: name, description: description)
-            MessageService.instance.channels.append(newChannel)
+            if AuthService.instance.isLoggedIn {
+                let newChannel = Channel(id: id, name: name, description: description)
+                MessageService.instance.channels.append(newChannel)
+            }
             
             completion(true)
         }
@@ -55,4 +57,27 @@ class SocketService: NSObject {
         completion(true)
     }
     
+    func getMessages(completion: @escaping (_ newMessage: Message) -> Void) {
+        socket.on("messageCreated") { (dataArray, ack) in
+            guard let id = dataArray[6] as? String else { return }
+            guard let message = dataArray[0] as? String else { return }
+            guard let channelID = dataArray[2] as? String else { return }
+            guard let userName = dataArray[3] as? String else { return }
+            guard let userAvatar = dataArray[4] as? String else { return }
+            guard let userAvatarColor = dataArray[5] as? String else { return }
+            guard let timeStamp = dataArray[7] as? String else { return }
+            
+            let newMessage = Message(id: id, message: message, channelID: channelID, userName: userName, userAvatar: userAvatar, userAvatarColor: userAvatarColor, timeStamp: timeStamp)
+            
+            completion(newMessage)
+        }
+    }
+    
+    func getTypingUsers(_ completionHandler: @escaping (_ typingUsers: [String : String]) -> Void) {
+        socket.on("userTypingUpdate") { (dataArray, ack) in
+            guard let typingUsers = dataArray[0] as? [String : String] else { return }
+            
+            completionHandler(typingUsers)
+        }
+    }
 }
