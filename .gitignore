@@ -23,8 +23,7 @@ xcuserdata/
 *.moved-aside
 *.xccheckout
 *.xcscmblueprint
-Utilities/
-README.md
+Smack/Utilities/
 
 ## Obj-C/Swift specific
 *.hmap
