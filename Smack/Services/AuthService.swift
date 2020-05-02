@@ -53,12 +53,12 @@ class AuthService {
             "password" : password
         ]
         
-        Alamofire.request(URL_REGISTER, method: .post, parameters: body, encoding: JSONEncoding.default, headers: HEADER).responseString { (response) in
-            if response.result.error == nil {
+        AF.request(URL_REGISTER, method: .post, parameters: body, encoding: JSONEncoding.default, headers: HTTPHeaders(HEADER)).responseString { (response) in
+            if response.error == nil {
                 completion(true)
             } else {
                 completion(false)
-                debugPrint(response.result.error as Any)
+                debugPrint(response.error as Any)
             }
         }
     }
@@ -72,8 +72,8 @@ class AuthService {
             "password" : password
         ]
         
-        Alamofire.request(URL_LOGIN, method: .post, parameters: body, encoding: JSONEncoding.default, headers: HEADER).responseJSON { (response) in
-            if response.result.error == nil {
+        AF.request(URL_LOGIN, method: .post, parameters: body, encoding: JSONEncoding.default, headers: HTTPHeaders(HEADER)).responseJSON { (response) in
+            if response.error == nil {
                 // Without SwiftyJSON
 //                if let json = response.result.value as? Dictionary<String, Any> {
 //                    if let email = json["user"] as? String {
@@ -99,7 +99,7 @@ class AuthService {
                 
             } else {
                 completion(false)
-                debugPrint(response.result.error as Any)
+                debugPrint(response.error as Any)
             }
         }
     }
@@ -115,22 +115,22 @@ class AuthService {
             "avatarColor" : avatarColor
         ]
         
-        Alamofire.request(URL_ADD_USER, method: .post, parameters: body, encoding: JSONEncoding.default, headers: BEARER_HEADER).responseJSON { (response) in
-            if response.result.error == nil {
+        AF.request(URL_ADD_USER, method: .post, parameters: body, encoding: JSONEncoding.default, headers: HTTPHeaders(BEARER_HEADER)).responseJSON { (response) in
+            if response.error == nil {
                 guard let data = response.data else { return }
                 self.setUserInfo(data: data)
                 
                 completion(true)
             } else {
                 completion(false)
-                debugPrint(response.result.error as Any)
+                debugPrint(response.error as Any)
             }
         }
     }
     
     func findUserByEmail(completion: @escaping CompletionHandler) {
-        Alamofire.request("\(URL_GET_USER_BY_EMAIL)\(userEmail)", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: BEARER_HEADER).responseJSON { (response) in
-            if response.result.error == nil {
+        AF.request("\(URL_GET_USER_BY_EMAIL)\(userEmail)", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: HTTPHeaders(BEARER_HEADER)).responseJSON { (response) in
+            if response.error == nil {
                 guard let data = response.data else { return }
                 self.setUserInfo(data: data)
                 print("TOKEN: \(self.authToken)")
@@ -138,7 +138,7 @@ class AuthService {
                 completion(true)
             } else {
                 completion(false)
-                debugPrint(response.result.error as Any)
+                debugPrint(response.error as Any)
             }
         }
     }
