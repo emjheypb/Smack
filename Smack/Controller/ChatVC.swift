@@ -13,6 +13,7 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var menuBtn: UIButton!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     @IBOutlet weak var channelLbl: UILabel!
+    @IBOutlet weak var channelDescriptionLbl: UILabel!
     @IBOutlet weak var messageTxtbx: UITextField!
     @IBOutlet weak var messagesTbl: UITableView!
     @IBOutlet weak var sendBtn: UIButton!
@@ -124,6 +125,7 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             onLoginGetMessages()
         } else {
             channelLbl.text = "SMACK"
+            channelDescriptionLbl.text = ""
             typingUsersLbl.text = ""
             messagesTbl.reloadData()
         }
@@ -147,6 +149,7 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                     self.updateWithChannel()
                 } else {
                     self.channelLbl.text = "No Channels"
+                    self.channelDescriptionLbl.text = ""
                 }
             }
         }
@@ -154,7 +157,9 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     func updateWithChannel() {
         let name = MessageService.instance.selectedChannel?.name ?? ""
+        let description = MessageService.instance.selectedChannel?.description ?? ""
         channelLbl.text = "#\(name)"
+        channelDescriptionLbl.text = description
         getMessages()
     }
     

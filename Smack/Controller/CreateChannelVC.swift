@@ -17,6 +17,9 @@ class CreateChannelVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let tapper = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(tapper)
 
         setupView()
     }
@@ -54,5 +57,9 @@ class CreateChannelVC: UIViewController {
 
     @objc func closeTouch(_ recognizer: UITapGestureRecognizer) {
         dismiss(animated: true, completion: nil)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
 }
