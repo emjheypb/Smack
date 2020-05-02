@@ -21,8 +21,8 @@ class MessageService {
     func findAllChannels(completion: @escaping CompletionHandler) {
         clearChannels()
         
-        Alamofire.request(URL_GET_CHANNELS, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: BEARER_HEADER).responseJSON { (response) in
-            if response.result.error == nil {
+            AF.request(URL_GET_CHANNELS, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: HTTPHeaders(BEARER_HEADER)).responseJSON { (response) in
+                if response.error == nil {
                 guard let data = response.data else { return }
                 
 //                do {
@@ -45,7 +45,7 @@ class MessageService {
                 NotificationCenter.default.post(name: NOTIF_CHANNELS_LOADED, object: nil)
                 completion(true)
             } else {
-                debugPrint(response.result.error as Any)
+                debugPrint(response.error as Any)
                completion(false)
             }
         }
@@ -54,8 +54,8 @@ class MessageService {
     func getAllChannelMessages(completion: @escaping CompletionHandler) {
         clearMessages()
         
-        Alamofire.request(URL_GET_MESSAGES + selectedChannel!.id, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: BEARER_HEADER).responseJSON { (response) in
-            if response.result.error == nil {
+        AF.request(URL_GET_MESSAGES + selectedChannel!.id, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: HTTPHeaders(BEARER_HEADER)).responseJSON { (response) in
+            if response.error == nil {
                 guard let data = response.data else { return }
                 
                 if let json = JSON(data).array {
@@ -76,7 +76,7 @@ class MessageService {
                 
                 completion(true)
             } else {
-                debugPrint(response.result.error as Any)
+                debugPrint(response.error as Any)
                 completion(false)
             }
         }
