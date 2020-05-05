@@ -19,3 +19,6 @@ Chat App
 - close popup on tap outside (ProfileVC.swift)
 - JSONDecoder - has to have the exact members of the result (Commented Out: MessageService.swift, Channel.swift)
 - Sockets (SocketService.swift, CreateChannelVC.swift, ChannelVC.swift, ChatVC.swift)
+
+<img src="Screens/Home.png" width="250"> <img src="Screens/Channels List.png" width="250"> <img src="Screens/Profile.png" width="250"> <img src="Screens/Login.png" width="250"> <img src="Screens/Sign Up.png" width="250"> <img src="Screens/Choose Avatar - Dark.png" width="250"> <img src="Screens/Choose Avatar - Light.png" width="250">
+<img src="Screens/Typing.png" width="250">
